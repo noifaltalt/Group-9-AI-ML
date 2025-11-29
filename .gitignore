@@ -4,6 +4,7 @@ results/
 .idea
 dist
 Unity
+venv/
 env
 *.pyc
 
