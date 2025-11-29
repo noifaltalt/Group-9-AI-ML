@@ -1,5 +1,6 @@
 .ml-agents-venv
 .venv
+results/
 .idea
 dist
 Unity
