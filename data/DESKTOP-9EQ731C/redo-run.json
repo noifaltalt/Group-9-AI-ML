@@ -1,0 +1,21 @@
+{
+    "run_id": "redo-run",
+    "env_name": "SoccerTwos",
+    "algorithm": "poca",
+    "total_steps": 590000,
+    "learning_rate": 0.0003,
+    "epoch": 3,
+    "bath_size": 2048,
+    "buffer_size": 20480,
+    "gamma": 0.99,
+    "lambda": 0.95,
+    "mean_group_reward": -0.031559403849779254,
+    "group_cumulative_reward": 0.0,
+    "episode_length": 968.9887276531136,
+    "mean_policy_loss": 0.017051686998456717,
+    "mean_value_loss": 0.0005432059042494531,
+    "mean_entropy": 3.0349662147299217,
+    "ELO": 1191.6108642578124,
+    "training_time": 18052.01388502121,
+    "efficiency_score": -1.7482483700040746e-06
+}
