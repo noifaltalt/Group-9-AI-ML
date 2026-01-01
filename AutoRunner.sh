@@ -17,6 +17,8 @@ while true; do
 
 	run_id=$(($(find data/server -type f | wc -l) + 1))
 
+
+	# starts a new bash process with command not set to different process so SIGINT trap works
 	timeout --foreground 5h bash -c "
 			trap 'exit' SIGINT
 			conda run --no-capture-output -n mlagents python -u training/linux_train_model.py --run-id $run_id" 
@@ -28,8 +30,9 @@ while true; do
 	git add data/server/*.json
 	
 	if ! git diff --cached --quiet ; then # checks if any file has been added to staging
+		git fetch
+		git pull --rebase 
 		git commit -m "Server Auto-Commit : Added training results from run #$run_id"
-		git pull --rebase
 		git push
 		echo "Commited results for run_id $run_id after 5 hours"
 	else 

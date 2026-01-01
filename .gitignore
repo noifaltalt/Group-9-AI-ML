@@ -7,4 +7,5 @@ Unity
 venv/
 env
 *.pyc
+*.yaml
 

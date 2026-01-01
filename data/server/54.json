@@ -1,0 +1,21 @@
+{
+    "run_id": "54",
+    "env_name": "SoccerTwos",
+    "algorithm": "poca",
+    "total_steps": 1390000,
+    "learning_rate": 0.0003,
+    "epoch": 3,
+    "bath_size": 2048,
+    "buffer_size": 20480,
+    "gamma": 0.99,
+    "lambda": 0.95,
+    "mean_group_reward": -0.04421959941744247,
+    "group_cumulative_reward": 0.0,
+    "episode_length": 914.5937541520515,
+    "mean_policy_loss": 0.016597540939555448,
+    "mean_value_loss": 0.0012613662873560366,
+    "mean_entropy": 3.1636601337770216,
+    "ELO": 1202.3320636059864,
+    "training_time": 17995.289088249207,
+    "efficiency_score": -2.45728752678486e-06
+}
