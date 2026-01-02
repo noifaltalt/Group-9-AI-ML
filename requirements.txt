@@ -1,0 +1,4 @@
+torch~=1.13.1
+-f https://download.pytorch.org/whl/torch_stable.html
+mlagents==1.0.0
+mlagents-envs==1.0.0
