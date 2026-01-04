@@ -9,7 +9,7 @@ import os
 import json
 import socket
 
-CONFIG_FILE = "config/poca/StrikersVsGoalie.yaml"
+CONFIG_FILE = "config/StrikersVsGoalie.yaml"
 ENV_FILE = "env/StrikersVsGoalie/UnityEnvironment.exe"
 TAGS = {
     "Environment/Cumulative Reward": "Mean Reward",
