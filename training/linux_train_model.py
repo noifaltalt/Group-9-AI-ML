@@ -86,9 +86,9 @@ def create_json_file(data):
     hostname = 'server'
     run_id = data["run_id"]
     file_name = f"{run_id}.json"
-    os.makedirs(f"data/{hostname}",exist_ok=True)
+    os.makedirs(f"data/{hostname}/SoccerTwos",exist_ok=True)
     print("[INFO] Saving data...")
-    with open(f"data/{hostname}/{file_name}",'w') as f:
+    with open(f"data/{hostname}/SoccerTwos/{file_name}",'w') as f:
         json.dump(data,f,indent=4)
     print("[INFO] Saving success!")
 
