@@ -1,4 +1,5 @@
 from tensorboard.backend.event_processing.event_accumulator import EventAccumulator
+from generate_yaml import create_yaml_file
 import numpy as np
 import subprocess
 import yaml
@@ -9,7 +10,7 @@ import os
 import json
 import socket
 
-CONFIG_FILE = "config/poca/SoccerTwos.yaml"
+CONFIG_FILE = "config/config.yaml"
 ENV_FILE = "env/SoccerTwos/UnityEnvironments.x86_64"
 TAGS = {
     "Environment/Group Cumulative Reward": "Mean Group Reward",
@@ -153,4 +154,5 @@ def main():
     data = save_data(run_id,metrics,total_steps,total_time,config_datas)
 
 if __name__ == "__main__":
+    create_yaml_file()
     main()
