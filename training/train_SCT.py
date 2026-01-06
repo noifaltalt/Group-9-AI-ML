@@ -87,7 +87,7 @@ def create_json_file(data):
     hostname = socket.gethostname()
     run_id = data["run_id"]
     file_name = f"{run_id}.json"
-    dir = f"data/{hostname}/SoccerTwos/"
+    dir = f"data/{hostname}/SoccerTwos"
     os.makedirs(dir,exist_ok=True)
     print("[INFO] Saving data...")
     with open(f"{dir}/{file_name}",'w') as f:
