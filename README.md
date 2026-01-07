@@ -1,13 +1,39 @@
-# Group-9-AI-ML
+# How to start training?
+## Setup environment
+Setup virtual environment and install all required libs
+```commandline
+python -m venv .ml-agents-venv (I recommend to use version 3.10.1)
+```
+```commandline
+.ml-agents-venv/Scripts/activate (for windows)
+source .ml-agents-venv/bin/activate (for mac)
+```
+```commandline
+pip install -r requirements.txt
+``` 
+Install this if you want to use GPU instead of CPU
+```commandline
+pip install "torch==2.1.1+cu118" "torchvision==0.16.1+cu118" "torchaudio==2.1.1+cu118" -f https://download.pytorch.org/whl/torch_stable.html (for windows / linux)
+``` 
 
-The following repository is a fork of Unity Technologies ML-Agents repository.
+## Start training
 
-Specific information related to environment setup can be found in the docs file present in the repository.
+### Env: SoccerTwos
+Open terminal and run this command
+```commandline
+python training/train_SCT.py --run-id [run id]
+```
+Argument
+- --run-id: run id
+- --command: "resume" or "force" (default: force)
+- --base-port: set different port to run multi-processes (default: 5005)
 
-## Training
-
-The training scripts can be found in the /training directory. Information regarding tosetup and configuration of the environment can be found in the README file present in the /training file.
-
-## Data
-
-The JSON data output can be found in the /data directory. The subdirectories located in the /data directory are named after each host machine.
+### Env: StrikersVsGoalie
+Open terminal and run this command
+```commandline
+python training/train_SKG.py --run-id [run id]
+```
+Argument
+- --run-id: run id
+- --command: "resume" or "force" (default: force)
+- --base-port: set different port to run multi-processes (default: 5005)
