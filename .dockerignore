@@ -1,8 +1,6 @@
 .venv/
-ml-agents-envs/
-__pycache__/
-*.pyc
 .git/
 .gitignore
-results/
-data/
+results/*
+data/*
+Unity/

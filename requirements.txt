@@ -1,4 +1,7 @@
 torch~=1.13.1
 -f https://download.pytorch.org/whl/torch_stable.html
-mlagents==1.0.0
+numpy==1.21.2
 mlagents-envs==1.0.0
+mlagents==1.0.0
+pandas<2.0
+PyYAML==6.0.3
