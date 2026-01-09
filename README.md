@@ -9,12 +9,13 @@ python -m venv .ml-agents-venv (I recommend to use version 3.10.1)
 source .ml-agents-venv/bin/activate (for mac)
 ```
 ```commandline
-pip install -r requirements.txt
-``` 
-Install this if you want to use GPU instead of CPU
-```commandline
 pip install "torch==2.1.1+cu118" "torchvision==0.16.1+cu118" "torchaudio==2.1.1+cu118" -f https://download.pytorch.org/whl/torch_stable.html (for windows / linux)
-``` 
+pip install torch torchvision torchaudio (for mac)
+```
+``` commandline
+python -m pip install ./ml-agents-envs
+python -m pip install ./ml-agents
+```
 
 ## Start training
 

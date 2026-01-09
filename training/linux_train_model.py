@@ -11,7 +11,7 @@ import json
 import socket
 
 CONFIG_FILE = "config/config.yaml"
-ENV_FILE = "env/Linux/UnityEnvironments.x86_64"
+ENV_FILE = "env/SoccerTwos/UnityEnvironments.x86_64"
 TAGS = {
     "Environment/Group Cumulative Reward": "Mean Group Reward",
     "Environment/Cumulative Reward": "Mean Reward",
@@ -84,7 +84,7 @@ def save_data(run_id,metrics,total_steps,total_time,config_data):
     return data
 
 def create_json_file(data):
-    hostname = "docker"
+    hostname = 'server'
     run_id = data["run_id"]
     file_name = f"{run_id}.json"
     os.makedirs(f"data/{hostname}/SoccerTwos",exist_ok=True)
@@ -111,10 +111,6 @@ def main():
     run_id = args.run_id
     command = args.command
     port = args.base_port
-
-    while run_id == "N/A":
-        run_id = os.getenv("RUN_ID")
-        break
 
     print(f"[INFO] Start training ML-Agents")
     print(f"[INFO] Run ID: {run_id}")

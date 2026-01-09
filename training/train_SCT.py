@@ -9,7 +9,6 @@ import argparse
 import os
 import json
 import socket
-import platform
 
 CONFIG_FILE = "config/config.yaml"
 ENV_FILE = "env/SoccerTwos/UnityEnvironment.exe"
@@ -22,7 +21,6 @@ TAGS = {
     "Policy/Entropy": "Mean Entropy",
     "Self-play/ELO":"ELO"
 }
-
 
 def find_latest_events(path,run_id, recursive = True):
     pattern = '**/events.out.tfevents.*' if recursive else 'events.out.tfevents*'
@@ -124,7 +122,7 @@ def main():
 
     try:
         cmd = [
-            "mlagents-learn",
+            "mlagents-learn ",
             CONFIG_FILE,
             f"--run-id={run_id}",
             # "--torch-device=cpu", # activate this if you want to use cpu instead of gpu
