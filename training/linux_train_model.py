@@ -124,7 +124,7 @@ def main():
             "mlagents-learn",
             CONFIG_FILE,
             f"--run-id={run_id}",
-            "--torch-device=cpu", # activate this if you want to use cpu instead of gpu
+            # "--torch-device=cpu", # activate this if you want to use cpu instead of gpu
             f"--{command}",
             "--no-graphics",
             f"--env={ENV_FILE}",
