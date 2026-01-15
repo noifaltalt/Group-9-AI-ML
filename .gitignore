@@ -9,3 +9,4 @@ env
 *.pyc
 *.yaml
 Assets/
+data/otherGroups
