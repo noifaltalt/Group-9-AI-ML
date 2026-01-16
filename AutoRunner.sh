@@ -19,7 +19,7 @@ while true; do
 
 
 	# starts a new bash process with command not set to different process so SIGINT trap works
-	timeout --foreground 5h bash -c "
+	timeout --foreground 12h bash -c "
 			trap 'exit' SIGINT
 			conda run --no-capture-output -n mlagents python -u training/linux_train_model.py --run-id $run_id" 
 
