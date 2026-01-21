@@ -6,23 +6,21 @@ Root:.
 |   README.md
 |   requirements.txt
 +---config
-|       config.yaml
-|       SoccerTwos.yaml
+|       config.yaml (configuration for random hyperparameters)
+|       SoccerTwos.yaml (default configuration of SoccerTwos environment)
 +---data 
 +---env             
 |   +---Soccer Twos
 |   |   |   UnityEnvironment.exe
 |   |   |   UnityEnvironments.x86_64                   
 +---model
-|       evaluate_features_importance.ipynb
-|       plot_data.ipynb
+|       evaluate_features_importance.ipynb (evaluate the importance of features)
 |       predict.py
 |       prediction.ipynb
-|       preprocess_data.ipynb
 |       train.py            
 +---tools
-|       create_excel.py
-|       generate_yaml.py    
+|       create_excel.py (collect all json files into one single dataset)
+|       generate_yaml.py (generate random hyperparameters for configuration)
 \---training
     |   linux_train_model.py
     |   train_SCT.py
@@ -57,3 +55,11 @@ Argument
 - --run-id: run id
 - --command: "resume" or "force" (default: force)
 - --base-port: set different port to run multi-processes (default: 5005)
+
+
+
+# Calculate MSE, RMSE and $R^2$
+Go to the location and run the code using jupyter:
+```commandline
+model/prediction.ipynb
+```
