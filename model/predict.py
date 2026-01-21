@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.metrics import r2_score
+# command to run python predict.py --batch nnnn --buffer nnnn --steps nnnn --lr nnnn --epoch n
 
 class SoccerTwosAnalyzer:
     def __init__(self):
