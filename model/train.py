@@ -3,6 +3,8 @@ import argparse
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 # command to run python train.py --batch nnnn --buffer nnnn --steps nnnn --lr nnnn --epoch n
 parser = argparse.ArgumentParser()
@@ -13,9 +15,7 @@ parser.add_argument("--batch", type=int, default=2048)
 parser.add_argument("--buffer", type=int, default=20480)
 
 args = parser.parse_args()
-script_dir = os.path.dirname(os.path.abspath(__file__))
-FILE_PATH = os.path.join(script_dir, "..", "data", "SCT-data.csv")
-FILE_PATH = os.path.normpath(FILE_PATH)
+FILE_PATH = "../data/SCT-data.csv"
 
 if not os.path.exists(FILE_PATH):
     print("No file")
@@ -32,10 +32,24 @@ features = ['total_steps', 'learning_rate', 'epoch', 'batch_size', 'buffer_size'
 X = df[features]
 
 def train_predictor(target_name):
-    if target_name not in df.columns: return None
     y = df[target_name]
-    model = RandomForestRegressor(n_estimators=150, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    model = RandomForestRegressor(n_estimators=100, max_depth=10, random_state=42)
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    
+    mae = mean_absolute_error(y_test, preds)
+    mse = mean_squared_error(y_test, preds)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_test, preds)
+    
+    print(f"MAE{mae:.4f}")
+    print(f"MSE{mse:.4f}")
+    print(f"RMSE{rmse:.4f}")
+    print(f"R2{r2:.4f}")
+
     model.fit(X, y)
+    
     return model
 
 model_entropy = train_predictor('mean_entropy')
