@@ -1,3 +1,33 @@
+# Project Structure
+```commandline
+Root:.
+|   AutoRunner.sh
+|   Dockerfile
+|   README.md
+|   requirements.txt
++---config
+|       config.yaml
+|       SoccerTwos.yaml
++---data 
++---env             
+|   +---Soccer Twos
+|   |   |   UnityEnvironment.exe
+|   |   |   UnityEnvironments.x86_64                   
++---model
+|       evaluate_features_importance.ipynb
+|       plot_data.ipynb
+|       predict.py
+|       prediction.ipynb
+|       preprocess_data.ipynb
+|       train.py            
++---tools
+|       create_excel.py
+|       generate_yaml.py    
+\---training
+    |   linux_train_model.py
+    |   train_SCT.py
+```
+
 # How to start training?
 ## Setup environment
 Setup virtual environment and install all required libs
